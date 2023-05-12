@@ -1,0 +1,70 @@
+#%RAML 1.0
+title: emp-reg-api
+version: v1
+baseUri: http//0.0.0.0:8081/api
+protocols:
+  - HTTP
+mediaType: [application/json]
+
+/getEmpdatails:
+  get:
+    queryParameters:
+      empId:
+        type: string
+        required: true
+        example:
+          "1234567"
+    responses:
+      200:
+        body:
+           application/json:
+            example:
+              {
+                "emp_no" : "1234567",
+                "emp_name": "krishna",
+                "block" : "A",
+                "location" : "banglore"
+              }
+
+/incidents:
+  post:
+    body:
+      application/json:
+        example:
+          {
+                "emp_no" : "1234567",
+                "emp_name": "krishna",
+                "block" : "A",
+                "location" : "banglore"
+              }
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {
+                "Msg":"successfully created"
+              }
+/changes:
+  post:
+    body:
+      application/json:
+        example:
+          {
+                "emp_no" : "1234567",
+                "emp_name": "krishna",
+                "block" : "A",
+                "location" : "banglore"
+              }
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {
+                "Msg":"successfully created"
+              }
+              
+                         
+            
+  
